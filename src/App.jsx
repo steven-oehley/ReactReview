@@ -8,7 +8,7 @@ export default function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
   return (
     <>
-      <Header text="Hello World!" />
+      <Header />
       <div className="container">
         <FeedbackList feedbackData={feedback} />
       </div>

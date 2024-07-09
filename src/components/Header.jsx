@@ -13,7 +13,7 @@ function Header({ text, bgColor, textColor }) {
 // default props can be passed in like this
 // OR they can be passsed in the same way as to JS function function Header({ text = "Hello World!"}) {
 Header.defaultProps = {
-  text: "ReactReview ⚛︎",
+  text: "ReactReviews ⚛︎",
   bgColor: "rgba(0,0,0,0.4)",
   textColor: "#FFD700",
 };

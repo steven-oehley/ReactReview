@@ -1,10 +1,10 @@
-import FeedBackItem from "./FeedbackItem";
+import FeedbackItem from "./FeedbackItem";
 
 function FeedbackList({ feedbackData }) {
   return (
     <ul>
       {feedbackData.map((feedback) => (
-        <FeedBackItem
+        <FeedbackItem
           key={feedback.id}
           text={feedback.text}
           rating={feedback.rating}

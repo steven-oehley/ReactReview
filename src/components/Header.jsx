@@ -1,23 +1,27 @@
 import PropTypes from "prop-types";
 
-function Header({ text, bgColor, textColor }) {
+function Header({
+  text = "React Reviews ⚛︎",
+  bgColor = "rgba(34, 34, 34, 0.6)",
+  textColor = "rgba(205, 235, 0, 0.75)",
+}) {
   return (
     <header style={{ backgroundColor: bgColor, color: textColor }}>
       <div className="container">
-        <h1>{text}</h1>
+        <h1 style={{ textShadow: "-1px -1px 1px #fff" }}>{text}</h1>
       </div>
     </header>
   );
 }
 
-// default props can be passed in like this
-// OR they can be passsed in the same way as to JS function function Header({ text = "Hello World!"}) {
-Header.defaultProps = {
+// default props can be passed in like this - will be deprecated soon
+// OR they can be passsed in the same way as to JS function function --->  Header({ text = "Hello World!"}) { **** BEST APPROACH
+/* Header.defaultProps = {
   text: "ReactReviews ⚛︎",
   bgColor: "rgba(0,0,0,0.4)",
   textColor: "#FFD700",
 };
-
+ */
 // Prop types to check types of props - good practice if not using TS
 
 Header.propTypes = {

@@ -38,7 +38,7 @@ export default function App() {
     <>
       <Header />
       <div className="container">
-        <FeedbackForm />
+        <FeedbackForm setFeedback={setFeedback} />
         <FeedbackStats feedbackData={feedback} />
         <FeedbackList
           feedbackData={feedback}

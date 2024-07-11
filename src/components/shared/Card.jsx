@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 function Card({ children, reverse = false }) {
-  return <li className={reverse ? "card reverse" : "card"}>{children}</li>;
+  return <div className={reverse ? "card reverse" : "card"}>{children}</div>;
 }
 
 // defaultProps will be ddeprecated

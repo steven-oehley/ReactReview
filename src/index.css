@@ -111,7 +111,7 @@ header {
 input {
   flex-grow: 2;
   border: none;
-  font-size: 16px;
+  font-size: 1rem;
   background-color: #333;
   color: #ffd700;
 }
@@ -238,6 +238,7 @@ input:focus {
   transform: translate(-50%, -50%);
 }
 
+form button,
 .modal button {
   margin: 10px;
   padding: 10px 20px;
@@ -246,7 +247,8 @@ input:focus {
   cursor: pointer;
 }
 
-.modal-btn-yes {
+.modal-btn-yes,
+form button {
   background-color: #ffd700;
   color: #000;
 }

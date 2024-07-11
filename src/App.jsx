@@ -3,6 +3,7 @@ import FeedbackData from "./data/FeedbackData";
 import Header from "./components/Header";
 import FeedbackList from "./components/FeedbackList";
 import FeedbackStats from "./components/FeedbackStats";
+import FeedbackForm from "./components/FeedbackForm";
 
 import { useState } from "react";
 import Modal from "./components/Modal";
@@ -37,6 +38,7 @@ export default function App() {
     <>
       <Header />
       <div className="container">
+        <FeedbackForm />
         <FeedbackStats feedbackData={feedback} />
         <FeedbackList
           feedbackData={feedback}

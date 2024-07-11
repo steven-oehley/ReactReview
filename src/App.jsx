@@ -20,14 +20,17 @@ export default function App() {
   const handleAccept = () => {
     setFeedback(feedback.filter((item) => item.id !== feedbackToDelete));
     setModalVisible(false);
+    setFeedbackToDelete(null);
   };
 
   const handleDecline = () => {
     setModalVisible(false);
+    setFeedbackToDelete(null);
   };
 
   const handleCloseModal = () => {
     setModalVisible(false);
+    setFeedbackToDelete(null);
   };
 
   return (

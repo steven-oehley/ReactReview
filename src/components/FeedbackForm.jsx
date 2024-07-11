@@ -22,7 +22,7 @@ const FeedbackForm = ({ setFeedback }) => {
     };
 
     //set new feedback
-    setFeedback((prev) => [...prev, newFeedback]);
+    setFeedback((prev) => [newFeedback, ...prev]);
 
     // Reset after submission
     setText(""); // Clear the text input after submission

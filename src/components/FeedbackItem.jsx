@@ -7,7 +7,10 @@ function FeedbackItem({ id, rating, text, reverse, handleDeleteClick }) {
     <Card reverse={reverse}>
       <div className="num-display">{rating}</div>
       <button onClick={() => handleDeleteClick(id)} className="close">
-        <FaTimes color={reverse ? "#fff" : "#FFD700"} />
+        <FaTimes
+          style={{ fontSize: "1.125rem" }}
+          color={reverse ? "#fff" : "#FFD700"}
+        />
       </button>
       <div className="text-display">{text}</div>
     </Card>

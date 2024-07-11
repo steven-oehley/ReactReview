@@ -1,18 +1,16 @@
-import PropTypes from "prop-types";
-
 import { useState } from "react";
-
 import Card from "./shared/Card";
+import Button from "./shared/Button";
 
-function FeedbackForm() {
+const FeedbackForm = () => {
   const [text, setText] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
   };
 
-  const handleChange = ({ target }) => {
-    setText(target.value);
+  const handleChange = (e) => {
+    setText(e.target.value);
   };
 
   const btnDisabled = text.length === 0;
@@ -30,15 +28,13 @@ function FeedbackForm() {
             value={text}
             onChange={handleChange}
           />
-          <button className="btn" type="submit" disabled={btnDisabled}>
+          <Button variant="primary" disabled={btnDisabled}>
             Send
-          </button>
+          </Button>
         </div>
       </form>
     </Card>
   );
-}
-
-FeedbackForm.propTypes = {};
+};
 
 export default FeedbackForm;

@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 
+import Button from "./shared/Button";
+
 function Modal({ isVisible, onAccept, onDecline, onClose }) {
   if (!isVisible) return null;
 
@@ -7,15 +9,17 @@ function Modal({ isVisible, onAccept, onDecline, onClose }) {
     <div className="modal-backdrop">
       <div className="modal">
         <p>Do you really want to delete this review?</p>
-        <button className="modal-btn-yes" onClick={onAccept}>
-          Yes
-        </button>
-        <button className="modal-btn-no" onClick={onDecline}>
-          No
-        </button>
-        <button className="modal-btn-close" onClick={onClose}>
-          Close
-        </button>
+        <div className="modal-buttons">
+          <Button variant="modal-yes" onClick={onAccept}>
+            Yes
+          </Button>
+          <Button variant="modal-no" onClick={onDecline}>
+            No
+          </Button>
+          <Button variant="modal-close" onClick={onClose}>
+            Close
+          </Button>
+        </div>
       </div>
     </div>
   );

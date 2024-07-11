@@ -120,6 +120,10 @@ input:focus {
   outline: none;
 }
 
+form button {
+  margin: 0.5rem 0.25rem;
+}
+
 .feedback-stats {
   color: #ffd700;
   display: flex;
@@ -148,38 +152,54 @@ input:focus {
 }
 
 .btn {
-  color: #000;
-  border: 0;
+  padding: 10px 20px;
   border-radius: 8px;
-  width: 100px;
-  height: 40px;
   cursor: pointer;
+  border: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.btn-primary {
+.primary {
   background-color: #ffd700;
+  color: #000;
 }
 
-.btn-secondary {
-  background: #ffd700;
+.secondary {
+  background-color: #333;
+  color: #ffd700;
 }
 
-.btn:hover {
-  transform: scale(0.98);
-  opacity: 0.9;
+.danger {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+.modal-yes {
+  background-color: #ffd700;
+  color: #000;
+}
+
+.modal-no {
+  background-color: #111;
+  color: #fff;
+}
+
+.modal-close {
+  background-color: #999;
+  color: #fff;
 }
 
 .btn:disabled {
-  background-color: #cccccc;
+  background-color: #dddddd;
   color: #333;
-  cursor: auto;
+  cursor: not-allowed;
 }
 
-.btn:disabled:hover {
-  transform: scale(1);
-  opacity: 1;
+.btn:hover:not(:disabled) {
+  transform: scale(0.98);
+  opacity: 0.9;
 }
-
 .message {
   padding-top: 10px;
   text-align: center;
@@ -238,29 +258,20 @@ input:focus {
   transform: translate(-50%, -50%);
 }
 
-form button,
+.modal-buttons {
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px; /* Add some margin-top for better spacing */
+}
+
 .modal button {
   margin: 10px;
   padding: 10px 20px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-}
-
-.modal-btn-yes,
-form button {
-  background-color: #ffd700;
-  color: #000;
-}
-
-.modal-btn-no {
-  background-color: #111;
-  color: #fff;
-}
-
-.modal-btn-close {
-  background-color: #999;
-  color: #fff;
 }
 
 @media (max-width: 600px) {

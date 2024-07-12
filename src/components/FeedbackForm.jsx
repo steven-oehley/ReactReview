@@ -6,7 +6,10 @@ import Card from "./shared/Card";
 import Button from "./shared/Button";
 import RatingSelect from "./RatingSelect";
 
-const FeedbackForm = ({ setFeedback }) => {
+import { useFeedbackContext } from "../context/FeedbackContext";
+
+const FeedbackForm = () => {
+  const { setFeedback } = useFeedbackContext();
   const [text, setText] = useState("");
   const [selectedRating, setSelectedRating] = useState(0);
 

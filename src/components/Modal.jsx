@@ -1,22 +1,24 @@
-import PropTypes from "prop-types";
-
 import Button from "./shared/Button";
+import { useFeedbackContext } from "../context/FeedbackContext";
 
-function Modal({ isVisible, onAccept, onDecline, onClose }) {
-  if (!isVisible) return null;
+function Modal() {
+  const { isModalVisible, handleAccept, handleDecline, handleCloseModal } =
+    useFeedbackContext();
+
+  if (!isModalVisible) return null;
 
   return (
     <div className="modal-backdrop">
       <div className="modal">
         <p>Do you really want to delete this review?</p>
         <div className="modal-buttons">
-          <Button variant="modal-yes" onClick={onAccept}>
+          <Button variant="modal-yes" onClick={handleAccept}>
             Yes
           </Button>
-          <Button variant="modal-no" onClick={onDecline}>
+          <Button variant="modal-no" onClick={handleDecline}>
             No
           </Button>
-          <Button variant="modal-close" onClick={onClose}>
+          <Button variant="modal-close" onClick={handleCloseModal}>
             Close
           </Button>
         </div>
@@ -24,12 +26,5 @@ function Modal({ isVisible, onAccept, onDecline, onClose }) {
     </div>
   );
 }
-
-Modal.propTypes = {
-  isVisible: PropTypes.bool.isRequired,
-  onAccept: PropTypes.func.isRequired,
-  onDecline: PropTypes.func.isRequired,
-  onClose: PropTypes.func.isRequired,
-};
 
 export default Modal;

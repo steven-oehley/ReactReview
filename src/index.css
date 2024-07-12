@@ -53,7 +53,13 @@ nav {
 }
 
 .nav-link:hover {
-  color: #ffd700;
+  color: #fff;
+}
+
+.nav-link.active {
+  color: #ffd700; /* Yellow color */
+  border-bottom: 2px solid #ffd700; /* Underline effect */
+  margin-bottom: -2px; /* To offset the border effect */
 }
 
 .card {

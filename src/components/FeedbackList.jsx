@@ -10,7 +10,7 @@ function FeedbackList({ feedbackData, handleDeleteClick }) {
         {feedbackData.length === 0 ? (
           <p style={{ color: "#fff", textAlign: "center" }}>No feedback yet</p>
         ) : (
-          feedbackData.map((feedback) => (
+          feedbackData.map((feedback, index) => (
             <motion.div
               key={feedback.id}
               initial={{ opacity: 0 }}
@@ -22,7 +22,7 @@ function FeedbackList({ feedbackData, handleDeleteClick }) {
                 key={feedback.id}
                 text={feedback.text}
                 rating={feedback.rating}
-                reverse={feedback.id % 2 === 0}
+                reverse={index % 2 === 0}
                 handleDeleteClick={handleDeleteClick}
               />
             </motion.div>

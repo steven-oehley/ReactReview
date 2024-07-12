@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 
+import Nav from "./components/Nav";
+
 function Header({
   text = "React Reviews ⚛︎",
   bgColor = "rgba(34, 34, 34, 0.6)",
@@ -9,6 +11,7 @@ function Header({
     <header style={{ backgroundColor: bgColor, color: textColor }}>
       <div className="container">
         <h1 style={{ textShadow: "-1px -1px 1px #fff" }}>{text}</h1>
+        <Nav />
       </div>
     </header>
   );

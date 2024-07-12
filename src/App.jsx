@@ -1,12 +1,16 @@
+// DATA IMPORTS
 import FeedbackData from "./data/FeedbackData";
 
-import Header from "./components/Header";
-import FeedbackList from "./components/FeedbackList";
-import FeedbackStats from "./components/FeedbackStats";
-import FeedbackForm from "./components/FeedbackForm";
+// COMPONENT IMPORTS
+import Header from "./components/Header/Header";
 
+// PAGE IMPORTS
+import AboutPage from "./pages/AboutPage";
+
+// REACT IMPORTS
 import { useState } from "react";
-import Modal from "./components/Modal";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
 
 export default function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
@@ -35,22 +39,27 @@ export default function App() {
   };
 
   return (
-    <>
+    <Router>
       <Header />
       <div className="container">
-        <FeedbackForm setFeedback={setFeedback} />
-        <FeedbackStats feedbackData={feedback} />
-        <FeedbackList
-          feedbackData={feedback}
-          handleDeleteClick={handleDeleteClick}
-        />
-        <Modal
-          isVisible={isModalVisible}
-          onAccept={handleAccept}
-          onDecline={handleDecline}
-          onClose={handleCloseModal}
-        />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <HomePage
+                feedback={feedback}
+                setFeedback={setFeedback}
+                handleDeleteClick={handleDeleteClick}
+                isModalVisible={isModalVisible}
+                handleAccept={handleAccept}
+                handleDecline={handleDecline}
+                handleCloseModal={handleCloseModal}
+              />
+            }
+          />
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
       </div>
-    </>
+    </Router>
   );
 }

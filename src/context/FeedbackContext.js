@@ -19,7 +19,7 @@ export const FeedbackProvider = ({ children }) => {
   };
 
   const handleAccept = () => {
-    setFeedback(feedback.filter((item) => item.id !== feedbackToDelete));
+    setFeedback(prevFeedback => {prevFeedback.filter((item) => item.id !== feedbackToDelete))};
     setModalVisible(false);
     setFeedbackToDelete(null);
   };
